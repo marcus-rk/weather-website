@@ -7,6 +7,7 @@ let API_key = '08d12f3f2d447c86eae6139865e577ce';
 
 // Declare const elements from HTML into Javascript with CSS querySelector
 const inputTextElement = document.querySelector(".search-input");
+const placeholderText = document.querySelector(".search-input").placeholder;
 const cityNameElement = document.querySelector(".city-name");
 const temperatureElement = document.querySelector(".temp");
 const searchButton = document.querySelector(".search-button");
@@ -26,7 +27,7 @@ function searchCity() {
                 }
                 // Resetting text input field to placeholder text
                 inputTextElement.value = "";
-                inputTextElement.placeholder = "Enter City Name";
+                inputTextElement.placeholder = placeholderText;
             })
             .catch(error => alert('Something went wrong: ' + error));
     }
