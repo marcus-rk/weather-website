@@ -3,7 +3,7 @@
 // Personal API_key
 let API_key = '08d12f3f2d447c86eae6139865e577ce';
 /* Weather by city name from API:
- https://api.openweathermap.org/data/2.5/weather?q=${inputTextElement.value}&units=metric&appid=${API_key} */
+ https://api.openweathermap.org/data/2.5/weather?q=${country_name}&units=metric&appid=${API_key} */
 
 // Declare const elements from HTML into Javascript with CSS querySelector
 const inputTextElement = document.querySelector(".search-input");
@@ -31,7 +31,7 @@ function searchCity() {
     }
 }
 
-// Add event listener for button click and Enter key press on the input field
+// Added event listener for button click and Enter key press on the input field
 searchButton.addEventListener("click", function () {
     searchCity();
 });
