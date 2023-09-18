@@ -18,7 +18,7 @@ function searchCity(){
         .then(response => response.json()) // Parse the response as JSON
         .then((weather) => {
             cityNameElement.innerHTML = `${weather.name}`;
-            temperatureElement.innerHTML = `${Math.floor(weather.main.temp)}°C`;
+            temperatureElement.innerHTML = `${Math.round(weather.main.temp)}°C`;
 
             // Resetting text input field to placeholder text
             inputTextElement.value = "";
