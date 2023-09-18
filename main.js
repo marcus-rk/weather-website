@@ -12,26 +12,29 @@ const temperatureElement = document.querySelector(".temp");
 const searchButton = document.querySelector(".search-button");
 
 // Function to search for city weather data
-function searchCity(){
-    // Use the fetch API to make a GET request to the OpenWeatherMap API
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputTextElement.value}&units=metric&appid=${API_key}`)
-        .then(response => response.json()) // Parse the response as JSON
-        .then((weather) => {
-            cityNameElement.innerHTML = `${weather.name}`;
-            temperatureElement.innerHTML = `${Math.round(weather.main.temp)}°C`;
-
-            // Resetting text input field to placeholder text
-            inputTextElement.value = "";
-            inputTextElement.placeholder = "Enter City Name";
-        })
-        .catch(error => alert('Something went wrong: ' + error));
+function searchCity() {
+    if (inputTextElement.value !== "") {
+        // Use the fetch API to make a GET request to the OpenWeatherMap API
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputTextElement.value}&units=metric&appid=${API_key}`)
+            .then(response => response.json()) // Parse the response as JSON
+            .then((weather) => {
+                if (`${weather.name}` !== 'undefined') {
+                    cityNameElement.innerHTML = `${weather.name}`;
+                    temperatureElement.innerHTML = `${Math.round(weather.main.temp)}°C`;
+                }
+                // Resetting text input field to placeholder text
+                inputTextElement.value = "";
+                inputTextElement.placeholder = "Enter City Name";
+            })
+            .catch(error => alert('Something went wrong: ' + error));
+    }
 }
 
 // Add event listener for button click and Enter key press on the input field
-searchButton.addEventListener("click", function() {
+searchButton.addEventListener("click", function () {
     searchCity();
 });
-inputTextElement.addEventListener("keydown", function(event) {
+inputTextElement.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         searchCity();
     }
