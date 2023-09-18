@@ -17,8 +17,10 @@ body {
 }
 
 section {
-    height: 60vh;
+    height: 45vh;
+    min-height: 12rem;
     width: 60vw;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,3 +65,21 @@ section {
     cursor:pointer;
     background: #3F51B5;
   }
+
+.display-weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.display-weather-container h1 {
+    color: white;
+    font-size: 2.5em;
+}
+
+.display-weather-container span {
+    color: white;
+    font-size: 1.5em;
+}
