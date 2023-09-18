@@ -7,6 +7,9 @@ Welcome to my Weather Website! This web application allows users to easily check
 * The website will display the city name and current temperature in Celsius.
 * If an invalid city name is entered, an alert will inform the user to try again.
 
+## Demo
+Open in new tab or window: https://marcus-rk.github.io/weather-website/
+
 ## Technology used
 * **HTML**: Defines the website structure, including the search input and weather display elements.
 * **CSS**: Enhances the visual appeal with gradient backgrounds, input styling, and modern typography.
