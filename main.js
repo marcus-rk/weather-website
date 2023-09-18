@@ -21,6 +21,8 @@ function searchCity() {
                 if (`${weather.name}` !== 'undefined') {
                     cityNameElement.innerHTML = `${weather.name}`;
                     temperatureElement.innerHTML = `${Math.round(weather.main.temp)}°C`;
+                } else {
+                    alert(`"${inputTextElement.value}" is not a valid input - try again!`)
                 }
                 // Resetting text input field to placeholder text
                 inputTextElement.value = "";
