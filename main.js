@@ -23,18 +23,15 @@ function searchCity() {
                 const cityName = weather.name;
                 const cityTemperature = weather.main.temp;
 
-                // update HTML elements or alert if input is not valid
-                if (cityName !== 'undefined') {
-                    cityNameElement.innerHTML = cityName;
-                    temperatureElement.innerHTML = `${Math.round(cityTemperature)}°C`;
-                } else {
-                    alert(`"${inputTrim}" is not a valid input - try again!`)
-                }
-
-                // Resetting text input field to placeholder text
+                // Update HTML elements and reset text input element
+                cityNameElement.innerHTML = cityName;
+                temperatureElement.innerHTML = `${Math.round(cityTemperature)}°C`;
                 inputTextElement.value = "";
             })
-            .catch(error => alert('Something went wrong: ' + error));
+            .catch(error => {
+                alert(`"${inputTrim}" is not a valid input - try again!`); // error for user
+                console.log('Something went wrong: ' + error); // error for dev in console
+            });
     }
 }
 
