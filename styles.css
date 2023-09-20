@@ -49,6 +49,7 @@ section {
     background: none;
     border: none;
     border-bottom: 2px solid white;
+    border-radius: 0; /* Added this line to remove rounded corners on iPhone */
     color: white;
 } .input-container input:focus {
       outline: none;
@@ -87,6 +88,10 @@ section {
 
 
 @media screen and (max-width: 768px) {
-
+    section {
+        width: 90vw;
+        height: 60vh;
+        gap: 5rem;
+    }
 
 }
