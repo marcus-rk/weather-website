@@ -15,6 +15,7 @@ const searchButton = document.querySelector(".search-button");
 function searchCity() {
     if (inputTextElement.value !== "") {
         const inputTrim = inputTextElement.value.trim() // allows for miss press spaces
+
         // Use the fetch API to make a GET request to the OpenWeatherMap API
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputTrim}&units=metric&appid=${API_key}`)
             .then(response => response.json()) // Parse the response as JSON
@@ -22,12 +23,14 @@ function searchCity() {
                 const cityName = weather.name;
                 const cityTemperature = weather.main.temp;
 
+                // update HTML elements or alert if input is not valid
                 if (cityName !== 'undefined') {
                     cityNameElement.innerHTML = cityName;
                     temperatureElement.innerHTML = `${Math.round(cityTemperature)}°C`;
                 } else {
                     alert(`"${inputTextElement.value}" is not a valid input - try again!`)
                 }
+
                 // Resetting text input field to placeholder text
                 inputTextElement.value = "";
             })
