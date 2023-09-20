@@ -14,13 +14,17 @@ const searchButton = document.querySelector(".search-button");
 // Function to search for city weather data
 function searchCity() {
     if (inputTextElement.value !== "") {
+        const inputTrim = inputTextElement.value.trim() // allows for miss press spaces
         // Use the fetch API to make a GET request to the OpenWeatherMap API
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputTextElement.value}&units=metric&appid=${API_key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputTrim}&units=metric&appid=${API_key}`)
             .then(response => response.json()) // Parse the response as JSON
             .then((weather) => {
-                if (`${weather.name}` !== 'undefined') {
-                    cityNameElement.innerHTML = `${weather.name}`;
-                    temperatureElement.innerHTML = `${Math.round(weather.main.temp)}°C`;
+                const cityName = weather.name;
+                const cityTemperature = weather.main.temp;
+
+                if (cityName !== 'undefined') {
+                    cityNameElement.innerHTML = cityName;
+                    temperatureElement.innerHTML = `${Math.round(cityTemperature)}°C`;
                 } else {
                     alert(`"${inputTextElement.value}" is not a valid input - try again!`)
                 }
