@@ -38,10 +38,8 @@ function searchCity() {
     }
 }
 
-// Added event listener for button click and Enter key press on the input field
-searchButton.addEventListener("click", function () {
-    searchCity();
-});
+// Added event listener for Enter key press on the input field
+// NOTE: The button has onclick() method in html)
 inputTextElement.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         searchCity();
