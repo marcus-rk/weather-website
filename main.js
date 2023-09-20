@@ -1,6 +1,6 @@
 // makj0005
 
-// Personal API_key
+// API_key
 let API_key = '08d12f3f2d447c86eae6139865e577ce';
 /* Weather by city name from API:
  https://api.openweathermap.org/data/2.5/weather?q=${country_name}&units=metric&appid=${API_key} */
@@ -9,7 +9,6 @@ let API_key = '08d12f3f2d447c86eae6139865e577ce';
 const inputTextElement = document.querySelector(".search-input");
 const cityNameElement = document.querySelector(".city-name");
 const temperatureElement = document.querySelector(".temp");
-const searchButton = document.querySelector(".search-button");
 
 // Function to search for city weather data
 function searchCity() {
