@@ -28,7 +28,7 @@ function searchCity() {
                     cityNameElement.innerHTML = cityName;
                     temperatureElement.innerHTML = `${Math.round(cityTemperature)}°C`;
                 } else {
-                    alert(`"${inputTextElement.value}" is not a valid input - try again!`)
+                    alert(`"${inputTrim}" is not a valid input - try again!`)
                 }
 
                 // Resetting text input field to placeholder text
