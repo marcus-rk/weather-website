@@ -65,6 +65,7 @@ section {
 } .input-container button:hover {
     cursor:pointer;
     background: #3F51B5;
+    transition: 0.15s;
   }
 
 .display-weather-container {
