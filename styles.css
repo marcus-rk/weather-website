@@ -54,6 +54,7 @@ section {
 } .input-container input:focus {
       outline: none;
   } .input-container input::placeholder{
+          color: white; /* Added because safari made wrong color */
           opacity: 100%; /* Added because firefox made lower opacity */
       }
 
